@@ -1,0 +1,4 @@
+.brand{flex-shrink:0}
+.hcsLogo{display:block;width:260px;max-width:100%;height:auto;object-fit:contain}
+.footerLogo{display:inline-block;max-width:100%;background:#fff;padding:14px;border-radius:12px}
+@media(max-width:650px){.brand .hcsLogo{width:220px;max-width:calc(100vw - 110px)}}
