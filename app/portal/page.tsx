@@ -1,0 +1,3 @@
+import {PageHero,Enquire} from '../components/Page';
+export const metadata={title:'CareGrid portal'};
+export default function Portal(){return <main><PageHero eyebrow="CAREGRID ACCESS" title="Your care programme starts here.">Already enrolled? Use the secure portal link supplied by your CareGrid programme or healthcare provider.</PageHero><section className="container section"><div className="card"><span className="badge">Portal connection pending</span><h2>Need help finding your access link?</h2><p>The official portal address has not yet been added to this website. Please do not enter your password or health information here.</p><Enquire topic="CareGrid portal access" label="Prepare an access enquiry"/></div></section></main>}

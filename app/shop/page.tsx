@@ -1,65 +1,8 @@
-"use client";
-import { useMemo, useState } from "react";
-import Link from "next/link";
-import { ArrowRight, Check, Filter, Search, ShoppingBag, X } from "lucide-react";
-
-const products = [
-  {slug:"yuwell-cgm", name:"Yuwell Continuous Glucose Monitoring", short:"Connected glucose monitoring for care at home.", price:2499, category:"CGM", badge:"Flagship"},
-  {slug:"yuwell-blood-pressure", name:"Yuwell Blood Pressure Monitor", short:"Simple, reliable home patient monitoring.", price:1299, category:"Patient Monitoring", badge:"Featured"},
-  {slug:"yuwell-pulse-oximeter", name:"Yuwell Pulse Oximeter", short:"Compact oxygen saturation and pulse monitoring.", price:699, category:"Patient Monitoring", badge:"Popular"},
-  {slug:"yuwell-thermometer", name:"Yuwell Digital Thermometer", short:"Fast temperature monitoring for home care.", price:349, category:"Patient Monitoring", badge:"New"},
-];
-
-const money=(n:number)=>`R${n.toLocaleString("en-ZA")}`;
-
-function ProductVisual({category}:{category:string}) {
-  return <div className="shopVisual">
-    <div className={`visualDevice ${category==="CGM"?"cgmDevice":category==="Patient Monitoring"?"monitorDevice":"smallDevice"}`}>
-      {category==="CGM" && <div className="visualSensor">CGM</div>}
-      {category==="Patient Monitoring" && <div className="visualScreen"><span>HCS</span><b>122/78</b></div>}
-    </div>
-  </div>
-}
-
-export default function ShopPage(){
-  const [query,setQuery]=useState("");
-  const [category,setCategory]=useState("All");
-  const [cart,setCart]=useState<typeof products>([]);
-  const [cartOpen,setCartOpen]=useState(false);
-  const categories=["All","CGM","Patient Monitoring"];
-  const filtered=useMemo(()=>products.filter(p=>(category==="All"||p.category===category)&&p.name.toLowerCase().includes(query.toLowerCase())),[query,category]);
-  const add=(p:typeof products[number])=>setCart(c=>c.some(x=>x.slug===p.slug)?c:[...c,p]);
-  const total=cart.reduce((s,p)=>s+p.price,0);
-  return <>
-    <header className="nav glass"><div className="container navinner">
-      <Link className="brand" href="/">homeclinic<span>store</span></Link>
-      <nav className="navlinks"><Link href="/shop">Shop</Link><Link href="/#cgm">CGM</Link><Link href="/#monitoring">Patient Monitoring</Link><Link href="/#rpm">RPM</Link><Link href="/#services">Services</Link><Link href="/#support">Support</Link></nav>
-      <div className="navactions"><Link className="iconbtn" href="/" aria-label="Home"><ArrowRight size={17}/></Link><button className="iconbtn" onClick={()=>setCartOpen(true)} aria-label="Cart"><ShoppingBag size={17}/></button><button className="pill" onClick={()=>location.href="/#services"}>Book a Service</button></div>
-    </div></header>
-
-    <main>
-      <section className="shopHero"><div className="container">
-        <div className="eyebrow">Home medical equipment</div>
-        <h1>Technology for care at home.</h1>
-        <p>Explore HCS-supported home medical equipment, led by Yuwell CGM and patient-monitoring solutions.</p>
-        <div className="shopTools">
-          <div className="searchBox"><Search size={18}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search equipment"/></div>
-          <div className="categoryTabs">{categories.map(c=><button className={category===c?"active":""} key={c} onClick={()=>setCategory(c)}><Filter size={14}/>{c}</button>)}</div>
-        </div>
-      </div></section>
-
-      <section className="section shopSection"><div className="container">
-        <div className="shopCount">{filtered.length} products</div>
-        <div className="shopGrid">{filtered.map(p=><article className="shopCard" key={p.slug}>
-          <Link href={`/shop/${p.slug}`}><ProductVisual category={p.category}/></Link>
-          <div className="shopCardBody"><span className="tag">{p.badge}</span><h2>{p.name}</h2><p className="muted">{p.short}</p><div className="shopBottom"><strong>{money(p.price)}</strong><button className="pill" onClick={()=>add(p)}>Add to cart</button></div><Link className="link" href={`/shop/${p.slug}`}>View product <ArrowRight size={14}/></Link></div>
-        </article>)}</div>
-        {filtered.length===0&&<div className="emptyState"><h2>No equipment found.</h2><p>Try another search or category.</p></div>}
-      </div></section>
-
-      <section className="section"><div className="container"><div className="feature"><div><div className="eyebrow">Supported beyond the sale</div><h2>Your equipment has a lifecycle.</h2><p className="sub">HCS connects product purchase with service, calibration, digital certificates and ongoing equipment support.</p><div className="actions"><Link className="pill" href="/#services">Book a service <ArrowRight size={15}/></Link><Link className="pill outline" href="/#support">View certificates</Link></div></div><div className="lifecycle"><span>Purchase</span><i>→</i><span>Connect</span><i>→</i><span>Monitor</span><i>→</i><span>Maintain</span></div></div></div></section>
-    </main>
-
-    {cartOpen&&<div className="modal"><div className="cartPanel"><button className="close" onClick={()=>setCartOpen(false)}><X size={17}/></button><div className="eyebrow">Your HCS cart</div><h2>Shopping bag</h2>{cart.length===0?<div className="emptyState small"><ShoppingBag size={30}/><p>Your cart is empty.</p><Link className="pill" href="/shop" onClick={()=>setCartOpen(false)}>Browse equipment</Link></div>:<><div className="cartList">{cart.map(p=><div className="cartItem" key={p.slug}><div><b>{p.name}</b><span>{money(p.price)}</span></div><button onClick={()=>setCart(c=>c.filter(x=>x.slug!==p.slug))}>Remove</button></div>)}</div><div className="cartTotal"><span>Total</span><strong>{money(total)}</strong></div><button className="pill checkout">Proceed to checkout</button><p className="muted">Checkout/payment integration can be connected to your chosen South African payment provider.</p></>}</div></div>}
-  </>
-}
+'use client';
+import {useState} from 'react';
+import Link from 'next/link';
+import {Activity,ArrowUpRight} from 'lucide-react';
+import {products,categories,money} from '../../lib/products';
+import {PageHero} from '../components/Page';
+import AddToBag from '../components/AddToBag';
+export default function Shop(){const [query,setQuery]=useState('');const [category,setCategory]=useState('All');const filtered=products.filter(p=>(category==='All'||p.category===category)&&(p.name+' '+p.description).toLowerCase().includes(query.toLowerCase()));return <main><PageHero eyebrow="SHOP · MEDICAL DEVICES" title="Find your everyday health essentials.">Browse by healthcare need, explore equipment and build a product enquiry.</PageHero><section className="container section"><div className="actions" style={{justifyContent:'space-between'}}><label style={{flex:'1 1 300px',maxWidth:600}}>Search equipment<input className="searchInput" type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Try blood pressure or glucose"/></label><Link className="button" href="/bag">View your bag <ArrowUpRight size={18}/></Link></div><div className="filterRow" aria-label="Product categories">{categories.map(c=><button key={c} aria-pressed={category===c} className={category===c?'active':''} onClick={()=>setCategory(c)}>{c}</button>)}</div><div className="notice">Preview catalogue: products and prices are illustrative. Final models, specifications, availability and prices must be confirmed before purchase. Payments are not enabled.</div><p role="status">{filtered.length} {filtered.length===1?'product':'products'}</p><div className="contentGrid">{filtered.map(p=><article className="card" key={p.slug}><Link href={'/shop/'+p.slug}><div className="productIcon"><Activity aria-hidden="true"/></div><span className="badge">{p.category}</span><h2>{p.name}</h2></Link><p>{p.description}</p><b>{money(p.price)} <small className="muted">illustrative</small></b><div className="productActions"><AddToBag slug={p.slug}/><Link className="textLink" href={'/shop/'+p.slug}>Details →</Link></div></article>)}</div>{!filtered.length&&<div className="card"><h2>No products listed yet.</h2><p>Try another category, or prepare an enquiry about the equipment you need.</p><div className="actions"><button className="button" onClick={()=>{setQuery('');setCategory('All')}}>Clear filters</button><Link className="textLink" href={'/contact?topic='+encodeURIComponent(category==='All'?'Equipment enquiry':category)}>Ask about this equipment →</Link></div></div>}</section></main>}

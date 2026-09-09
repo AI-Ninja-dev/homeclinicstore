@@ -1,4 +1,6 @@
 import './globals.css';
-import type { Metadata } from 'next';
-export const metadata: Metadata = { title:'HomeClinicStore | Better Healthcare Starts at Home', description:'Home medical equipment, remote patient monitoring and biomedical support for supported home medical equipment.' };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}
+import type {Metadata} from 'next';
+import Link from 'next/link';
+import Header from './components/Header';
+export const metadata:Metadata={title:{default:'HomeClinicStore | Healthcare is moving home',template:'%s | HomeClinicStore'},description:'Explore home medical devices, DNA and diagnostics, CareGrid remote patient monitoring and biomedical support.'};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en-ZA"><body><Header/>{children}<footer className="siteFooter"><div className="container footerGrid"><div><Link href="/" className="footerBrand">homeclinic<b>store</b></Link><p>Next-gen healthcare at home.</p><small>Medical devices · Diagnostics · Connected care · Support</small></div><div><b>Explore</b><Link href="/shop">Medical devices</Link><Link href="/diagnostics">DNA & Diagnostics</Link><Link href="/caregrid">CareGrid</Link></div><div><b>Here to help</b><Link href="/services">Biomedical services</Link><Link href="/providers">Healthcare providers</Link><Link href="/contact">Contact</Link></div></div><div className="container footerBottom"><span>© {new Date().getFullYear()} HomeClinicStore</span><Link href="/privacy">Privacy & your information</Link><span>South Africa</span></div></footer></body></html>}

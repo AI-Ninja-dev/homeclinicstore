@@ -1,30 +1,29 @@
-# HomeClinicStore (HCS)
+# HomeClinicStore
 
-Premium connected home healthcare website starter.
+Responsive Next.js website based on the Shop → Test → Monitor → Support ecosystem.
 
-## Focus
-- Yuwell CGM and patient monitoring as flagship products
-- Home medical equipment
-- Remote Patient Monitoring (RPM)
-- Biomedical services specifically for supported home medical equipment
-- Online calibration/service booking concept
-- Digital certificate verification/download concept
-- Customer/service workflows
+## Run
 
-## Run locally
+Use `npm ci`, then `npm run dev`. For a production static export, run `npm run build`; public output is in `out/`.
 
-```bash
-npm install
-npm run dev
-```
+## Included
 
-Then open http://localhost:3000
+- Homepage and shared responsive navigation
+- Product search, healthcare-need filters, product details, session-based shopping bag
+- Product and service enquiries prepared in the visitor's email app, with text-download fallback
+- DNA & Diagnostics (planned service), CareGrid, biomedical services, providers, about, contact and privacy pages
+- Clearly labelled sample equipment history and certificate download
 
-## Note
-This package is a polished functional frontend prototype. Production integrations still need to be connected for real payments, authentication, database records, live appointment availability, RPM device APIs, secure document storage and certificate generation/approval workflows.
+Public enquiries: info@homeclinicstore.co.za. Main domain: homeclinicstore.co.za.
 
-## Shopping experience
-- `/shop` premium product catalogue with search, category filters and cart
-- `/shop/[slug]` individual product pages
-- Flagship Yuwell CGM and patient-monitoring products
-- Replace product visuals with real approved HCS/Yuwell images in `public/products/`
+## Before a public commercial launch
+
+Confirm real inventory, approved product specifications, prices, imagery and terms. Current catalogue prices are illustrative; no payment integration is enabled. Provide the verified CareGrid sign-in address. DNA testing is planned and is not orderable. The site does not collect clinical records or provide live patient monitoring. Enquiries require the visitor to send the prepared email; no backend receipt is claimed.
+
+## Image credit
+
+Hero photograph: Monstera Production, Pexels, https://www.pexels.com/photo/smiling-black-woman-near-white-bed-in-bedroom-5331130/ (Pexels license). Used as general home wellbeing imagery; the model is not presented as an actual patient or endorser.
+
+## Hosting
+
+Static export configured for Sites. The GitHub repository remains the source repository for the website. `.openai/hosting.json` records the private Sites publication project.

@@ -1,0 +1,7 @@
+'use client';
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+import {useState} from 'react';
+import {Menu,X,ArrowUpRight} from 'lucide-react';
+const links=[['Shop','/shop'],['DNA & Diagnostics','/diagnostics'],['CareGrid','/caregrid'],['Biomedical Services','/services'],['For Providers','/providers'],['About','/about'],['Contact','/contact']];
+export default function Header(){const [open,setOpen]=useState(false);const path=usePathname();return <><a className="skipLink" href="#content">Skip to content</a><div className="topline">A connected approach to healthcare at home <span>HomeClinicStore · South Africa</span></div><header className="siteHeader"><div className="headerInner"><Link className="brand" href="/" aria-label="HomeClinicStore home"><span className="brandMark">+</span><span>homeclinic<b>store</b><small>NEXT-GEN HEALTHCARE AT HOME</small></span></Link><button className="menuToggle" aria-label={open?'Close navigation':'Open navigation'} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav aria-label="Main navigation" className={open?'mainNav open':'mainNav'}>{links.map(([label,href])=><Link key={href} href={href} aria-current={path===href?'page':undefined} onClick={()=>setOpen(false)}>{label}</Link>)}<Link href="/portal" className="portalLink" onClick={()=>setOpen(false)}>CareGrid portal <ArrowUpRight size={14}/></Link></nav></div></header><div id="content"/></>}
