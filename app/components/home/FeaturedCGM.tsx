@@ -1,3 +1,4 @@
+import { assetPath } from '../../../lib/assets';
 import { CalendarDays, Radio, RefreshCw } from 'lucide-react';
 import { Reveal } from './HomeMotion';
 import { HomeAction } from './HomeUI';
@@ -7,7 +8,7 @@ export function CGMVisual() {
     <div className="hcs-product-visual">
       <span className="hcs-product-tag">YUWELL ANYTIME</span>
       <div className="hcs-product-image">
-        <img src="/images/yuwell-anytime-ct3.webp" alt="Yuwell Anytime CT3 glucose-monitoring applicator and transmitter" width={1400} height={520} loading="lazy" decoding="async" />
+        <img src={assetPath('/images/yuwell-anytime-ct3.webp')} alt="Yuwell Anytime CT3 glucose-monitoring applicator and transmitter" width={1400} height={520} loading="lazy" decoding="async" />
       </div>
       <svg className="hcs-data-flow" viewBox="0 0 500 440" fill="none" aria-hidden="true">
         <path d="M155 318 C60 250 90 80 285 75 S470 280 385 340" />

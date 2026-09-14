@@ -1,3 +1,4 @@
+import { assetPath } from '../../lib/assets';
 import Link from 'next/link';
 import { Activity, HeartPulse, Thermometer, Waves, ArrowUpRight } from 'lucide-react';
 import type { CatalogProduct } from '../../lib/catalog';
@@ -9,7 +10,7 @@ export function ProductCard({ product }: { product: CatalogProduct }) {
   const Icon = icons[product.icon];
   return <article className="store-product-card">
     <Link href={`/shop/${product.slug}`} className={`store-product-media${product.image ? ' has-image' : ''}`} aria-label={`Explore ${product.name}`}>
-      {product.image ? <img src={product.image} alt="Yuwell Anytime CT3 applicator and transmitter" width={1400} height={520} loading="lazy" /> : <Icon size={64} strokeWidth={1} aria-hidden="true" />}
+      {product.image ? <img src={assetPath(product.image)} alt="Yuwell Anytime CT3 applicator and transmitter" width={1400} height={520} loading="lazy" /> : <Icon size={64} strokeWidth={1} aria-hidden="true" />}
       {!product.image && <span>Model selected on enquiry</span>}
       <span className="store-product-arrow"><ArrowUpRight size={20} aria-hidden="true" /></span>
     </Link>

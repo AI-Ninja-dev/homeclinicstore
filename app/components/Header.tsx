@@ -1,4 +1,5 @@
 'use client';
+import { assetPath } from '../../lib/assets';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -38,7 +39,7 @@ export default function Header() {
     <a className="skipLink" href="#content">Skip to content</a>
     <header className="store-header">
       <div className="store-header-inner">
-        <Link className="store-brand" href="/" aria-label="HomeClinicStore home"><img src="/hcs-logo.png" alt="HomeClinicStore — Next-Gen Healthcare at Home" width={920} height={180} /></Link>
+        <Link className="store-brand" href="/" aria-label="HomeClinicStore home"><img src={assetPath('/hcs-logo.png')} alt="HomeClinicStore — Next-Gen Healthcare at Home" width={920} height={180} /></Link>
         <nav className="store-desktop-nav" aria-label="Main navigation">{links.map(([label, href]) => <Link key={href} href={href} aria-current={path === href ? 'page' : undefined}>{label}</Link>)}</nav>
         <div className="store-header-actions"><Link href="/bag" className="store-bag" aria-label="Your device shortlist"><ShoppingBag size={20} strokeWidth={1.5} /></Link><Link className="store-header-cta" href="/contact">Let’s talk <ArrowUpRight size={15} aria-hidden="true" /></Link><button className="store-menu-button" onClick={show} aria-label="Open navigation" aria-expanded={open} aria-controls="store-mobile-menu"><span /><span /></button></div>
       </div>

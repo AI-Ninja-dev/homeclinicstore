@@ -1,3 +1,4 @@
+import { assetPath } from '../../../lib/assets';
 import { HomeAction } from './HomeUI';
 
 export function Hero() {
@@ -10,7 +11,7 @@ export function Hero() {
           <div className="hcs-actions"><HomeAction href="/shop/yuwell-cgm">Explore CGM</HomeAction><HomeAction href="#caregrid" secondary>How CareGrid Works</HomeAction></div>
         </div>
         <figure className="hcs-editorial-product">
-          <img src="/images/yuwell-anytime-ct3.webp" alt="Yuwell Anytime CT3 applicator and reusable transmitter" width={1400} height={520} fetchPriority="high" />
+          <img src={assetPath('/images/yuwell-anytime-ct3.webp')} alt="Yuwell Anytime CT3 applicator and reusable transmitter" width={1400} height={520} fetchPriority="high" />
           <figcaption>Yuwell Anytime CT3 <span>Continuous glucose monitoring</span></figcaption>
         </figure>
       </div>
