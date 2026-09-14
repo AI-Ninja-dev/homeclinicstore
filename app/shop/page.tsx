@@ -1,8 +1,23 @@
 'use client';
-import {useState} from 'react';
-import Link from 'next/link';
-import {Activity,ArrowUpRight} from 'lucide-react';
-import {products,categories,money} from '../../lib/products';
-import {PageHero} from '../components/Page';
-import AddToBag from '../components/AddToBag';
-export default function Shop(){const [query,setQuery]=useState('');const [category,setCategory]=useState('All');const filtered=products.filter(p=>(category==='All'||p.category===category)&&(p.name+' '+p.description).toLowerCase().includes(query.toLowerCase()));return <main><PageHero eyebrow="SHOP · MEDICAL DEVICES" title="Find your everyday health essentials.">Browse by healthcare need, explore equipment and build a product enquiry.</PageHero><section className="container section"><div className="actions" style={{justifyContent:'space-between'}}><label style={{flex:'1 1 300px',maxWidth:600}}>Search equipment<input className="searchInput" type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Try blood pressure or glucose"/></label><Link className="button" href="/bag">View your bag <ArrowUpRight size={18}/></Link></div><div className="filterRow" aria-label="Product categories">{categories.map(c=><button key={c} aria-pressed={category===c} className={category===c?'active':''} onClick={()=>setCategory(c)}>{c}</button>)}</div><div className="notice">Preview catalogue: products and prices are illustrative. Final models, specifications, availability and prices must be confirmed before purchase. Payments are not enabled.</div><p role="status">{filtered.length} {filtered.length===1?'product':'products'}</p><div className="contentGrid">{filtered.map(p=><article className="card" key={p.slug}><Link href={'/shop/'+p.slug}><div className="productIcon"><Activity aria-hidden="true"/></div><span className="badge">{p.category}</span><h2>{p.name}</h2></Link><p>{p.description}</p><b>{money(p.price)} <small className="muted">illustrative</small></b><div className="productActions"><AddToBag slug={p.slug}/><Link className="textLink" href={'/shop/'+p.slug}>Details →</Link></div></article>)}</div>{!filtered.length&&<div className="card"><h2>No products listed yet.</h2><p>Try another category, or prepare an enquiry about the equipment you need.</p><div className="actions"><button className="button" onClick={()=>{setQuery('');setCategory('All')}}>Clear filters</button><Link className="textLink" href={'/contact?topic='+encodeURIComponent(category==='All'?'Equipment enquiry':category)}>Ask about this equipment →</Link></div></div>}</section></main>}
+
+import { useState } from 'react';
+import { catalog } from '../../lib/catalog';
+import { ProductCard } from '../components/ProductCard';
+import { PageHero } from '../components/Page';
+import { HomeAction } from '../components/home/HomeUI';
+
+const categories = ['All devices', 'Manage diabetes', 'Monitor blood pressure', 'Track daily vitals'];
+
+export default function Shop() {
+  const [category, setCategory] = useState('All devices');
+  const [query, setQuery] = useState('');
+  const filtered = catalog.filter(product => (category === 'All devices' || product.category === category) && `${product.name} ${product.category} ${product.copy}`.toLowerCase().includes(query.trim().toLowerCase()));
+
+  return <main><PageHero eyebrow="THE HOMECLINICSTORE COLLECTION" title="Choose for the life you live.">From continuous glucose monitoring to everyday essentials. Explore devices with clear guidance before you order.</PageHero><section className="hcs-wrap hcs-section">
+    <div className="store-shop-bar"><label className="store-shop-search">Find a device<input className="searchInput" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Search CGM, blood pressure or temperature" /></label><HomeAction href="/device-finder" secondary>Help me choose</HomeAction></div>
+    <div className="filterRow" aria-label="Shop by health need">{categories.map(item => <button key={item} onClick={() => setCategory(item)} className={item === category ? 'active' : ''} aria-pressed={item === category}>{item}</button>)}</div>
+    <p role="status">{filtered.length} {filtered.length === 1 ? 'device' : 'devices'} to explore</p>
+    {filtered.length ? <div className="store-shop-grid">{filtered.map(product => <ProductCard key={product.slug} product={product} />)}</div> : <div className="store-empty"><h2>No matching devices.</h2><p>Try a different search or ask for help with the equipment you need.</p><div className="actions"><button className="button" onClick={() => { setCategory('All devices'); setQuery(''); }}>Clear filters</button><HomeAction href="/contact?topic=Help%20finding%20equipment" secondary>Ask our team</HomeAction></div></div>}
+    <p className="releaseNote">Prices, South African availability and supplied models are confirmed by quote. Online payments are not currently available.</p>
+  </section></main>;
+}

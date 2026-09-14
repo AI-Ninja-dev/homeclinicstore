@@ -1,29 +1,25 @@
 # HomeClinicStore
 
-Responsive Next.js website based on the Shop → Test → Monitor → Support ecosystem.
+Premium CGM-led Next.js storefront for South African home-healthcare buyers. Brand: Next-Gen Healthcare at Home.
 
-## Run
+## Development
 
-Use `npm ci`, then `npm run dev`. For a production static export, run `npm run build`; public output is in `out/`.
+Run `npm ci`, then `npm run dev`. Run `npm run lint`, `npm run typecheck` and `npm run build` before release. The production build exports static files to `out/`. Node.js 20 or newer is recommended.
 
-## Included
+## Experience
 
-- Homepage and shared responsive navigation
-- Product search, healthcare-need filters, product details, session-based shopping bag
-- Product and service enquiries prepared in the visitor's email app, with text-download fallback
-- DNA & Diagnostics (planned service), CareGrid, biomedical services, providers, about, contact and privacy pages
-- Clearly labelled sample equipment history and certificate download
+- Responsive glass navigation, original logo, accessible mobile menu and shared footer.
+- Reusable homepage sections for CGM, health pathways, home monitoring, CareGrid, biomedical services and education.
+- Four-device enquiry catalog: Yuwell Anytime CT3 CGM, upper-arm blood-pressure monitor, digital thermometer and pulse oximeter.
+- Search, filters, product pages, device finder and session-only shortlist.
+- Enquiries open the customer's email app, with a text-download fallback. No order, payment or email delivery is claimed by the website.
+- CareGrid dashboard is an illustrative preview, not live patient data.
+- Reduced-motion support and a homepage animation pause control.
 
-Public enquiries: info@homeclinicstore.co.za. Main domain: homeclinicstore.co.za.
+## Commercial readiness
 
-## Before a public commercial launch
-
-Confirm real inventory, approved product specifications, prices, imagery and terms. Current catalogue prices are illustrative; no payment integration is enabled. Provide the verified CareGrid sign-in address. DNA testing is planned and is not orderable. The site does not collect clinical records or provide live patient monitoring. Enquiries require the visitor to send the prepared email; no backend receipt is claimed.
-
-## Image credit
-
-Hero photograph: Monstera Production, Pexels, https://www.pexels.com/photo/smiling-black-woman-near-white-bed-in-bedroom-5331130/ (Pexels license). Used as general home wellbeing imagery; the model is not presented as an actual patient or endorser.
+This release supports product discovery and requests for availability. Confirm local stock, exact models for the three essentials, selling prices, VAT, delivery, warranty, returns and device compatibility before accepting orders. The existing contact mailbox requires business verification. See LAUNCH-REVIEW.md for release details and sources.
 
 ## Hosting
 
-Static export configured for Sites. The GitHub repository remains the source repository for the website. `.openai/hosting.json` records the private Sites publication project.
+Static export is configured for Sites in `.openai/hosting.json`. A GitHub push saves source code; publication is a separate action requiring owner approval.

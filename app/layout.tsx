@@ -1,7 +1,21 @@
 import './globals.css';
 import './logo.css';
-import type {Metadata} from 'next';
-import Link from 'next/link';
+import './release.css';
+import './premium.css';
+import './storefront.css';
+import type { Metadata } from 'next';
+import { Manrope, DM_Sans } from 'next/font/google';
 import Header from './components/Header';
-export const metadata:Metadata={title:{default:'HomeClinicStore | Your Health, Connected',template:'%s | HomeClinicStore'},description:'Home medical devices, CareGrid remote patient monitoring and biomedical support for cardiovascular health, diabetes, hypertension and chronic care.'};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en-ZA"><body><Header/>{children}<footer className="siteFooter"><div className="container footerGrid"><div><Link href="/" className="footerBrand footerLogo" aria-label="HomeClinicStore home"><img className="hcsLogo" src="/hcs-logo.png" alt="HomeClinicStore — Next-gen healthcare at home" width={920} height={180}/></Link><p>Next-gen healthcare at home.</p><small>Medical devices · Remote monitoring · Biomedical support</small></div><div><b>Explore</b><Link href="/shop">Health solutions</Link><Link href="/caregrid">CareGrid</Link><Link href="/providers">For providers</Link></div><div><b>Here to help</b><Link href="/services">Biomedical services</Link><Link href="/about">About us</Link><Link href="/contact">Contact</Link></div></div><div className="container footerBottom"><span>© {new Date().getFullYear()} HomeClinicStore</span><Link href="/privacy">Privacy & your information</Link><span>South Africa</span></div></footer></body></html>}
+import Footer from './components/Footer';
+
+const display = Manrope({ subsets: ['latin'], display: 'swap', variable: '--font-display' });
+const body = DM_Sans({ subsets: ['latin'], display: 'swap', variable: '--font-body' });
+
+export const metadata: Metadata = {
+  title: { default: 'HomeClinicStore | Next-Gen Healthcare at Home', template: '%s | HomeClinicStore' },
+  description: 'Explore CGM, connected home-health devices, CareGrid and biomedical support with HomeClinicStore in South Africa.',
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="en-ZA" className={`${display.variable} ${body.variable}`}><body><Header />{children}<Footer /></body></html>;
+}
