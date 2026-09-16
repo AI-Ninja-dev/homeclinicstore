@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { assetPath } from '../../lib/assets';
 import Link from 'next/link';
 import { Activity, HeartPulse, Thermometer, Waves, ArrowUpRight, Wind, Scale, Baby, Heart } from 'lucide-react';
@@ -18,26 +21,30 @@ const icons = {
 
 export function ProductCard({ product }: { product: CatalogProduct }) {
   const Icon = icons[product.icon] || Activity;
+  const [imgFailed, setImgFailed] = useState(false);
+  const showImage = Boolean(product.image) && !imgFailed;
+
   return (
     <article className="store-product-card">
       <Link
         href={`/shop/${product.slug}`}
-        className={`store-product-media${product.image ? ' has-image' : ''}`}
+        className={`store-product-media${showImage ? ' has-image' : ''}`}
         aria-label={`Explore ${product.name}`}
       >
-        {product.image ? (
+        {showImage ? (
           <img
-            src={assetPath(product.image)}
+            src={assetPath(product.image!)}
             alt={`${product.name} product image`}
             width={800}
             height={600}
             loading="lazy"
             style={{ objectFit: 'contain', background: 'transparent' }}
+            onError={() => setImgFailed(true)}
           />
         ) : (
           <>
             <Icon size={64} strokeWidth={1} aria-hidden="true" />
-            <span>Model selected on enquiry</span>
+            <span>Photo coming soon</span>
           </>
         )}
         <span className="store-product-arrow">
