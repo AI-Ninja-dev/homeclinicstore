@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#f4f7f9"/>
+  <rect x="120" y="100" width="160" height="80" rx="8" fill="#e8eef3" stroke="#1e5a8a" stroke-width="2"/>
+  <rect x="140" y="120" width="12" height="40" rx="2" fill="#1e5a8a"/>
+  <rect x="160" y="120" width="12" height="40" rx="2" fill="#1e5a8a"/>
+  <rect x="180" y="120" width="12" height="40" rx="2" fill="#1e5a8a"/>
+  <rect x="200" y="120" width="12" height="40" rx="2" fill="#1e5a8a"/>
+  <rect x="220" y="120" width="12" height="40" rx="2" fill="#1e5a8a"/>
+  <rect x="240" y="120" width="12" height="40" rx="2" fill="#1e5a8a"/>
+  <text x="200" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#5a6570">Test Strips</text>
+</svg>

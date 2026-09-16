@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#f4f7f9"/>
+  <rect x="140" y="90" width="120" height="90" rx="10" fill="#1e5a8a"/>
+  <rect x="155" y="105" width="90" height="40" rx="3" fill="#0d3a5c"/>
+  <ellipse cx="200" cy="210" rx="50" ry="16" fill="#c5d4e0" stroke="#1e5a8a" stroke-width="2"/>
+  <text x="200" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#5a6570">Upper-arm BP</text>
+</svg>
