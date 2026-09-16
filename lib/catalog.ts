@@ -19,7 +19,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Continuous glucose monitoring with a reusable transmitter and 14-day sensors. Real-time readings every 3 minutes via the Anytime app.',
     detail: '14-day sensor · Reusable transmitter up to 2 years · MARD ~6.9–9%',
     icon: 'glucose',
-    image: '/images/products/yuwell-anytime-ct3.webp',
+    image: '/images/yuwell-anytime-ct3.webp',
     priceHint: 2500,
   },
   {
