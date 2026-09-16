@@ -29,7 +29,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Reusable CGM transmitter for the Anytime CT-3 system. Pairs with 14-day sensors for continuous glucose data.',
     detail: 'Up to 2-year life · Bluetooth · Charge via stand',
     icon: 'glucose',
-    image: '/images/products/yuwell-transmitter.webp',
+    image: '/images/products/yuwell-transmitter.svg',
     priceHint: 1100,
   },
   {
@@ -39,7 +39,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Sterile 14-day CGM sensor with auto-applicator. Requires a compatible Anytime transmitter.',
     detail: '14-day wear · No routine calibration · Water resistant',
     icon: 'glucose',
-    image: '/images/products/yuwell-sensor.webp',
+    image: '/images/products/yuwell-sensor.svg',
     priceHint: 950,
   },
   {
@@ -49,7 +49,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Clinically oriented upper-arm monitor with AFib, arrhythmia and premature contraction detection, Bluetooth app sync and rechargeable battery.',
     detail: 'PARR technology · USB-C · 120 memories · Cuff 24–40 cm',
     icon: 'pressure',
-    image: '/images/products/rossmax-z5-bp.webp',
+    image: '/images/products/rossmax-z5-bp.svg',
     priceHint: 2299,
   },
   {
@@ -59,7 +59,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Accurate upper-arm blood pressure monitor with PARR stroke-risk screening, cuff detection and 7-day averaging.',
     detail: 'AFib / ARR detection · Large LCD · Cuff 24–40 cm',
     icon: 'pressure',
-    image: '/images/products/rossmax-x5-bp.webp',
+    image: '/images/products/rossmax-x5-bp.svg',
     priceHint: 1699,
   },
   {
@@ -69,7 +69,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Reliable automatic upper-arm blood pressure monitoring for home and clinic routines.',
     detail: 'Exact model confirmed on enquiry · Cuff size to fit',
     icon: 'pressure',
-    image: '/images/products/bp-upper-arm.webp',
+    image: '/images/products/bp-upper-arm.svg',
     priceHint: 1199,
   },
   {
@@ -79,7 +79,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Compact wrist-worn blood pressure monitor for portable daily checks.',
     detail: 'Portable form factor · Exact model on enquiry',
     icon: 'pressure',
-    image: '/images/products/bp-wrist.webp',
+    image: '/images/products/bp-wrist.svg',
     priceHint: 999,
   },
   {
@@ -89,7 +89,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'App-connected blood pressure monitoring so you can log and share readings with your care team.',
     detail: 'Bluetooth · App sync · Exact model on enquiry',
     icon: 'pressure',
-    image: '/images/products/bp-bluetooth.webp',
+    image: '/images/products/bp-bluetooth.svg',
     priceHint: 1899,
   },
   {
@@ -99,7 +99,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Fingertip SpO2 and pulse oximeter with Artery Check Technology and Bluetooth. Spot-check oxygen saturation and pulse rate in about a minute.',
     detail: 'ACT arterial condition · Bluetooth · OLED display',
     icon: 'oxygen',
-    image: '/images/products/rossmax-sb210-spo2.webp',
+    image: '/images/products/rossmax-sb210-spo2.svg',
     priceHint: 2299,
   },
   {
@@ -109,7 +109,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Compact fingertip device for estimated oxygen saturation and pulse rate spot checks at home.',
     detail: 'SpO2 + pulse · Exact model on enquiry',
     icon: 'oxygen',
-    image: '/images/products/spo2-fingertip.webp',
+    image: '/images/products/spo2-fingertip.svg',
     priceHint: 699,
   },
   {
@@ -119,7 +119,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Wearable ring-style monitor for oxygen saturation and pulse in a compact form factor.',
     detail: 'Wearable design · Exact model on enquiry',
     icon: 'oxygen',
-    image: '/images/products/spo2-ring.webp',
+    image: '/images/products/spo2-ring.svg',
     priceHint: 1499,
   },
   {
@@ -129,7 +129,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Telephoto non-contact thermometer for temple and object temperature in about one second, with Bluetooth.',
     detail: 'Up to 10 cm measurement · Bluetooth · Fever alarm',
     icon: 'temperature',
-    image: '/images/products/thermometer-hc700.webp',
+    image: '/images/products/thermometer-hc700.svg',
     priceHint: 1099,
   },
   {
@@ -139,7 +139,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Fast blood glucose meter with GDH-FAD chemistry, small sample volume and Bluetooth app connectivity.',
     detail: '5-second test · 500 memories · Healthstyle app',
     icon: 'glucose',
-    image: '/images/products/rossmax-hs200.webp',
+    image: '/images/products/rossmax-hs200.svg',
     priceHint: 999,
   },
   {
@@ -149,7 +149,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Compatible test strips for the Rossmax HS200 blood glucose monitoring system.',
     detail: 'Consumable · Pack size confirmed on quote',
     icon: 'glucose',
-    image: '/images/products/glucose-strips.webp',
+    image: '/images/products/glucose-strips.svg',
     priceHint: 349,
   },
   {
@@ -159,7 +159,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Home continuous positive airway pressure systems for sleep apnoea and respiratory support. Exact model and mask kit confirmed on enquiry.',
     detail: 'Therapy device · Model and accessories on quote',
     icon: 'respiratory',
-    image: '/images/products/cpap.webp',
+    image: '/images/products/cpap.svg',
     priceHint: 15000,
   },
   {
@@ -169,7 +169,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'End-tidal CO2 monitoring for clinical and emergency use. Specifications confirmed on enquiry.',
     detail: 'EtCO2 monitoring · Professional device',
     icon: 'respiratory',
-    image: '/images/products/capnograph.webp',
+    image: '/images/products/capnograph.svg',
     priceHint: 12000,
   },
   {
@@ -179,7 +179,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Digital body weight scale for everyday home monitoring.',
     detail: 'Home scale · Exact model on enquiry',
     icon: 'scale',
-    image: '/images/products/scale-wb101.webp',
+    image: '/images/products/scale-wb101.svg',
     priceHint: 599,
   },
   {
@@ -189,7 +189,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Infant weighing scale for paediatric and home-care use.',
     detail: 'Paediatric capacity · Exact model on enquiry',
     icon: 'scale',
-    image: '/images/products/baby-scale.webp',
+    image: '/images/products/baby-scale.svg',
     priceHint: 899,
   },
   {
@@ -199,7 +199,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Handheld fetal heart rate Doppler for antenatal monitoring under professional guidance.',
     detail: 'Portable Doppler · Exact model on enquiry',
     icon: 'fetal',
-    image: '/images/products/fetal-doppler.webp',
+    image: '/images/products/fetal-doppler.svg',
     priceHint: 1299,
   },
   {
@@ -209,7 +209,7 @@ export const catalog: CatalogProduct[] = [
     copy: 'Handheld electrocardiograph for spot ECG screening. Lead count and connectivity confirmed on enquiry.',
     detail: 'Handheld ECG · Specs on quote',
     icon: 'ecg',
-    image: '/images/products/ecg-portable.webp',
+    image: '/images/products/ecg-portable.svg',
     priceHint: 4500,
   },
 ];
