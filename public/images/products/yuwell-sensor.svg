@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#f4f7f9"/>
+  <circle cx="200" cy="140" r="45" fill="#e8eef3" stroke="#1e5a8a" stroke-width="3"/>
+  <circle cx="200" cy="140" r="12" fill="#1e5a8a"/>
+  <text x="200" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#5a6570">14-day Sensor</text>
+</svg>

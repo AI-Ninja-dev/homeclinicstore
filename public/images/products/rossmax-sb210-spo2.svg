@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#f4f7f9"/>
+  <rect x="160" y="90" width="80" height="100" rx="20" fill="#1e5a8a"/>
+  <rect x="170" y="105" width="60" height="35" rx="4" fill="#0d3a5c"/>
+  <text x="200" y="128" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#7ec8e3" font-weight="600">98%</text>
+  <text x="200" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#5a6570">SB210 SpO2</text>
+</svg>
