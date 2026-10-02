@@ -1,8 +1,8 @@
 # HomeClinicStore design system
 
-Direction: calm, modern technology for care at home. Preserve the supplied logo and the tagline Next-Gen Healthcare at Home.
+Direction: calm, modern technology for care at home, grounded in human warmth and everyday comfort. Lead the homepage with the existing family-at-home photograph; keep the supplied logo and the tagline Next-Gen Healthcare at Home.
 
-Use deep blue for primary actions, charcoal for body text, white and cool silver for broad surfaces. Manrope headings and DM Sans body text are self-hosted by Next.js font compilation. Keep headings spacious and readable; avoid dense dashboard styling in shopping journeys.
+Use deep blue for primary actions, charcoal for body text, white and cool silver for broad surfaces. Use deep blue behind the photo-led home hero, with generous spacing and a quiet gradient over the image caption. Manrope headings and DM Sans body text are self-hosted by Next.js font compilation. Keep headings spacious and readable; avoid dense dashboard styling in shopping journeys.
 
 Shared components live in app/components; reusable homepage sections live in app/components/home. Catalog content lives in lib/catalog.ts and lib/launch.ts. storefront.css contains the updated shared and editorial layouts, with premium.css and release.css supporting product and finder components.
 
