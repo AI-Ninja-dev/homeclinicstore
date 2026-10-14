@@ -95,7 +95,7 @@ export default function Shop() {
           </div>
         )}
         <p className="releaseNote">
-          Indicative prices in rand. Final price, South African availability and supplied models are confirmed by quote. Online payments are not currently available.
+          HomeClinicStore products are quoted directly. Selected products link to an external marketplace for payment and delivery; this is made clear before leaving the site. External items are not included in our cart or order records.
         </p>
       </section>
     </main>
