@@ -9,9 +9,37 @@ export type CatalogProduct = {
   icon: 'glucose' | 'pressure' | 'temperature' | 'oxygen' | 'respiratory' | 'scale' | 'fetal' | 'ecg';
   image?: string;
   priceHint?: number;
+  externalPurchaseUrl?: string;
 };
 
 export const catalog: CatalogProduct[] = [
+  {
+    slug: 'amazon-mx-blood-pressure-monitor',
+    name: 'MX Health Maxi Blood Pressure Monitor',
+    category: 'Monitor blood pressure',
+    copy: 'Home blood pressure monitor listed on Amazon South Africa. Check the listing for exact specifications, seller and current availability.',
+    detail: 'External purchase · Price and delivery confirmed by Amazon',
+    icon: 'pressure',
+    externalPurchaseUrl: 'https://www.amazon.co.za/dp/B0BNLH59CF',
+  },
+  {
+    slug: 'amazon-berrcom-thermometer',
+    name: 'Berrcom Non-Contact Infrared Thermometer',
+    category: 'Track daily vitals',
+    copy: 'Non-contact infrared thermometer listed on Amazon South Africa. Confirm the model and suitability with the seller.',
+    detail: 'External purchase · Price and delivery confirmed by Amazon',
+    icon: 'temperature',
+    externalPurchaseUrl: 'https://www.amazon.co.za/dp/B01FSYSN8S',
+  },
+  {
+    slug: 'amazon-wellue-oxygen-monitor',
+    name: 'Wellue Wearable Oxygen Monitor',
+    category: 'Track daily vitals',
+    copy: 'Wearable oxygen monitoring device listed on Amazon South Africa. Check the listing for specifications and availability.',
+    detail: 'External purchase · Price and delivery confirmed by Amazon',
+    icon: 'oxygen',
+    externalPurchaseUrl: 'https://www.amazon.co.za/dp/B094JG4JD7',
+  },
   {
     slug: 'yuwell-cgm',
     name: 'Yuwell Anytime CT-3 CGM',
