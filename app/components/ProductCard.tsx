@@ -59,7 +59,7 @@ export function ProductCard({ product }: { product: CatalogProduct }) {
         <p>{product.copy}</p>
         <small>{product.detail}</small>
         <div className="store-product-price">
-          {product.priceHint
+          {product.externalPurchaseUrl ? 'See current price at checkout' : product.priceHint
             ? `From ${money(product.priceHint)} · confirmed on quote`
             : 'Price on request'}
         </div>
@@ -67,7 +67,9 @@ export function ProductCard({ product }: { product: CatalogProduct }) {
           <Link className="textLink" href={`/shop/${product.slug}`}>
             View details <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
-          <AddToBag slug={product.slug} />
+          {product.externalPurchaseUrl ? (
+            <Link className="button" href={`/shop/${product.slug}`}>Buy now</Link>
+          ) : <AddToBag slug={product.slug} />}
         </div>
       </div>
     </article>
