@@ -45,6 +45,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
   const imageSrc = catalogItem?.image;
   const priceHint = catalogItem?.priceHint;
   const detail = catalogItem?.detail;
+  const externalUrl = catalogItem?.externalPurchaseUrl;
 
   return (
     <main>
@@ -61,16 +62,26 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
           {detail && <p>{detail}</p>}
           {p?.fit && <p>{p.fit}</p>}
           <p className="quoteLabel">
-            {priceHint ? `From ${money(priceHint)} · final price on quote` : 'Price & availability on request'}
+            {externalUrl ? 'See Amazon for current price and availability' : priceHint ? `From ${money(priceHint)} · final price on quote` : 'Price & availability on request'}
           </p>
           <div className="actions">
-            <Link className="button" href={'/contact?topic=' + encodeURIComponent('Quote: ' + name)}>
-              Request a quote →
-            </Link>
-            <AddToBag slug={slug} />
+            {externalUrl ? (
+              <a className="button" href={externalUrl} target="_blank" rel="noopener noreferrer sponsored">
+                Buy now →
+              </a>
+            ) : (
+              <>
+                <Link className="button" href={'/contact?topic=' + encodeURIComponent('Quote: ' + name)}>
+                  Request a quote →
+                </Link>
+                <AddToBag slug={slug} />
+              </>
+            )}
           </div>
           <p className="releaseNote">
-            No payment required to enquire. Confirm the exact model, price in rand and delivery before ordering.
+            {externalUrl
+              ? 'You will leave HomeClinicStore and complete your purchase on Amazon.co.za. Amazon or its marketplace seller handles payment, delivery and returns. We may earn a commission from qualifying purchases when an eligible programme is active.'
+              : 'No payment required to enquire. Confirm the exact model, price in rand and delivery before ordering.'}
           </p>
           <div className="productSummary">
             <h3>Confidence comes from the details.</h3>
@@ -141,7 +152,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
                 <strong>{catalogItem.detail}</strong>
               </p>
               <div className="notice">
-                Exact model, accessories and South African availability are confirmed when you request a quote.
+                {externalUrl ? 'Check the linked seller listing for exact model, accessories, availability and warranty terms.' : 'Exact model, accessories and South African availability are confirmed when you request a quote.'}
               </div>
             </>
           )}
